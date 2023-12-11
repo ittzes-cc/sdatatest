@@ -24,4 +24,8 @@ public class StudentService {
     public List<StudentDTO> getStudents() {
         return studentMapper.entityToDto(studentRepository.findAll());
     }
+
+    public void saveStudent(StudentDTO studentDTO){
+        studentRepository.save(studentMapper.dtoToEntity(studentDTO));
+    }
 }
